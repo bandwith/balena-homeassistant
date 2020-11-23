@@ -14,9 +14,10 @@ services:
       - "/dev:/dev"
       - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
   mqtt:
-    image: arm32v6/eclipse-mosquitto
+    image: eclipse-mosquitto:latest
     ports:
       - "1883:1883"
+      - "9001:9001"
     restart: always
   hass-configurator:
     image: "causticlab/hass-configurator-docker:arm"
