@@ -42,9 +42,19 @@ services:
       - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+      - 
     volumes:
       - supervisor-share:/data
       # - ./scripts:/scripts
     labels:
       io.balena.features.balena-socket: '1'
+      io.balena.features.kernel-modules: '1'
+      io.balena.features.firmware: '1'
       io.balena.features.dbus: '1'
+      io.balena.features.sysfs: '1'
+      io.balena.features.procfs: '1'
+      io.balena.features.journal-logs: '1'
+      io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
+      io.balena.update.strategy: download-then-kill
+      io.balena.update.handover-timeout: ''
