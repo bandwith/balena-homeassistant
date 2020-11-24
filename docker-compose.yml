@@ -35,9 +35,7 @@ services:
     container_name: hassio_supervisor
     # restart: always
     privileged: true
-    tty: true
-    # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"]
-    
+    # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
@@ -48,7 +46,6 @@ services:
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
     volumes:
       - supervisor-share:/data
-      # - ./scripts:/scripts
     labels:
       io.balena.features.balena-socket: '1'
       io.balena.features.kernel-modules: '1'
