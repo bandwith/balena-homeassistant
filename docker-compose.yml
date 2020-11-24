@@ -34,7 +34,7 @@ services:
     build: hassio-supervisor
     container_name: hassio_supervisor
     # restart: always
-    privileged: true
+    # privileged: true
     # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"
     security_opt:
       - seccomp:unconfined
