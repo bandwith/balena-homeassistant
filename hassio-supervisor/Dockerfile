@@ -1,5 +1,6 @@
-FROM  homeassistant/aarch64-hassio-supervisor:latest
+FROM  homeassistant/aarch64-hassio-supervisor
 
 RUN ln -sf /var/run/balena-engine.sock /run/docker.sock
+RUN ln -sf /home/run/dbus /run/dbus
 
 COPY hassio.json /etc/
