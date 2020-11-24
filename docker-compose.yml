@@ -1,6 +1,7 @@
 version: '2'
 volumes:
     config:
+    supervisor-share:
 services:
   homeassistant:
     build: homeassistant
@@ -38,11 +39,11 @@ services:
       - seccomp:unconfined
     environment:
       - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
-      - SUPERVISOR_SHARE=${SUPERVISOR_SHARE}
+      - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
     volumes:
-      - ${SUPERVISOR_SHARE}:/data
+      - supervisor-share:/data
       - ./scripts:/scripts
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
