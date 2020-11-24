@@ -46,6 +46,9 @@ services:
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
     volumes:
       - supervisor-share:/data
+    devices:
+      - "/dev:/dev"
+      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"    
     labels:
       io.balena.features.balena-socket: '1'
       io.balena.features.kernel-modules: '1'
