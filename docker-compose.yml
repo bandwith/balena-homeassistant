@@ -43,7 +43,7 @@ services:
       - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
       - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
-      - SUPERVISOR_MACHINE=aarch64
+      - SUPERVISOR_MACHINE=raspberrypi4-64
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
     volumes:
       - supervisor-share:/data
