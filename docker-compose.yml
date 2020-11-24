@@ -3,17 +3,17 @@ volumes:
     config:
     supervisor-share:
 services:
-  homeassistant:
-    build: homeassistant
-    ports:
-      - 80:8123
-    privileged: true
-    volumes:
-      - 'config:/config'
-    restart: always
-    devices:
-      - "/dev:/dev"
-      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
+  # homeassistant:
+  #   build: homeassistant
+  #   ports:
+  #     - 80:8123
+  #   privileged: true
+  #   volumes:
+  #     - 'config:/config'
+  #   restart: always
+  #   devices:
+  #     - "/dev:/dev"
+  #     - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
   mqtt:
     image: eclipse-mosquitto:latest
     ports:
@@ -41,6 +41,7 @@ services:
       - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
       - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
+      - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
     volumes:
       - supervisor-share:/data
       # - ./scripts:/scripts
