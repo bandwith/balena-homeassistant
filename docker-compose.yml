@@ -14,21 +14,21 @@ services:
   #   devices:
   #     - "/dev:/dev"
   #     - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
-  mqtt:
-    image: eclipse-mosquitto:latest
-    ports:
-      - "1883:1883"
-      - "9001:9001"
-    restart: always
-  hass-configurator:
-    image: "causticlab/hass-configurator-docker:arm"
-    restart: always
-    ports:
-      - "8080:3218"
-    volumes:
-      - 'config:/hass-config'
-    environment:
-      - HC_BASEPATH=/hass-config
+  # mqtt:
+  #   image: eclipse-mosquitto:latest
+  #   ports:
+  #     - "1883:1883"
+  #     - "9001:9001"
+  #   restart: always
+  # hass-configurator:
+  #   image: "causticlab/hass-configurator-docker:arm"
+  #   restart: always
+  #   ports:
+  #     - "8080:3218"
+  #   volumes:
+  #     - 'config:/hass-config'
+  #   environment:
+  #     - HC_BASEPATH=/hass-config
   hassio_supervisor:
     image: "homeassistant/aarch64-hassio-supervisor"
     container_name: hassio_supervisor
