@@ -38,6 +38,7 @@ services:
     # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"]
     security_opt:
       - seccomp:unconfined
+      - apparmor:unconfined
     environment:
       - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
       - SUPERVISOR_SHARE=supervisor-share
