@@ -41,11 +41,9 @@ services:
       - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
       - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
-      # - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket
     volumes:
       - supervisor-share:/data
       - ./scripts:/scripts
-      # - /var/run/docker.sock:/var/run/docker.sock
     labels:
       io.balena.features.balena-socket: '1'
       io.balena.features.dbus: '1'
