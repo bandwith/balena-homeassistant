@@ -32,7 +32,7 @@ services:
   hassio_supervisor:
     image: "homeassistant/aarch64-hassio-supervisor"
     container_name: hassio_supervisor
-    restart: always
+    # restart: always
     privileged: true
     tty: true
     # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"]
