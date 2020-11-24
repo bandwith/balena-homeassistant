@@ -28,3 +28,7 @@ services:
       - 'config:/hass-config'
     environment:
       - HC_BASEPATH=/hass-config
+  hassio-supervisor:
+    image: "homeassistant/aarch64-hassio-supervisor"
+    restart: always
+    
