@@ -44,7 +44,7 @@ services:
       - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
       - SUPERVISOR_MACHINE=raspberrypi4-64
-      - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
     volumes:
       - supervisor-share:/data
     devices:
