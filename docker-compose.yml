@@ -33,7 +33,7 @@ services:
     # image: "homeassistant/aarch64-hassio-supervisor"
     build: hassio-supervisor
     container_name: hassio_supervisor
-    # restart: always
+    restart: always
     # privileged: true
     # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"
     security_opt:
