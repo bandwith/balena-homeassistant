@@ -1,7 +1,7 @@
 version: '2'
 volumes:
     config:
-    # supervisor-share:
+    supervisor-share:
 services:
   # homeassistant:
   #   build: homeassistant
