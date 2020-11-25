@@ -43,7 +43,7 @@ services:
       - apparmor:unconfined
     environment:
       - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
-      - SUPERVISOR=aarch64
+      - SUPERVISOR=homeassistant/aarch64-hassio-supervisor
       - SUPERVISOR_SHARE=supervisor-share
       - SUPERVISOR_NAME=hassio_supervisor
       - SUPERVISOR_MACHINE=raspberrypi4-64
