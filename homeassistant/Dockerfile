@@ -7,7 +7,6 @@ COPY sensors.sh /tmp/sensors.sh
 COPY start.sh /tmp/start.sh
 
 RUN chmod +x /tmp/start.sh
-
-ADD https://github.com/hacs/integration/releases/latest/download/hacs.zip /tmp/custom_components/hacs
+# ADD https://github.com/hacs/integration/releases/latest/download/hacs.zip /tmp/custom_components/hacs
 
 CMD ["bash","/tmp/start.sh"]
