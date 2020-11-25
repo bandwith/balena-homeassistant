@@ -3,19 +3,19 @@ volumes:
     config:
     # supervisor-share:
 services:
-  homeassistant:
-    build: homeassistant
-    ports:
-      - 80:8123
-    privileged: true
-    volumes:
-      - 'config:/config'
-    restart: always
-    devices:
-      - "/dev:/dev"
-      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
-    environment: 
-      - "TZ=America/New_York"
+  # homeassistant:
+  #   build: homeassistant
+  #   ports:
+  #     - 80:8123
+  #   privileged: true
+  #   volumes:
+  #     - 'config:/config'
+  #   restart: always
+  #   devices:
+  #     - "/dev:/dev"
+  #     - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
+  #   environment: 
+  #     - "TZ=America/New_York"
   # mqtt:
   #   image: eclipse-mosquitto:latest
   #   ports:
@@ -31,36 +31,36 @@ services:
   #     - 'config:/hass-config'
   #   environment:
   #     - HC_BASEPATH=/hass-config
-  # hassio_supervisor:
-  #   # image: "homeassistant/aarch64-hassio-supervisor"
-  #   build: hassio-supervisor
-  #   container_name: hassio_supervisor
-  #   restart: always
-  #   privileged: true
-  #   # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"
-  #   security_opt:
-  #     - seccomp:unconfined
-  #     - apparmor:unconfined
-  #   environment:
-  #     - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
-  #     - SUPERVISOR_SHARE=supervisor-share
-  #     - SUPERVISOR_NAME=hassio_supervisor
-  #     - SUPERVISOR_MACHINE=aarch64
-  #     - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
-  #   volumes:
-  #     - supervisor-share:/data
-  #   devices:
-  #     - "/dev:/dev"
-  #     - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"    
-  #   labels:
-  #     io.balena.features.balena-socket: '1'
-  #     io.balena.features.kernel-modules: '1'
-  #     io.balena.features.firmware: '1'
-  #     io.balena.features.dbus: '1'
-  #     io.balena.features.sysfs: '1'
-  #     io.balena.features.procfs: '1'
-  #     io.balena.features.journal-logs: '1'
-  #     io.balena.features.supervisor-api: '0'
-  #     io.balena.features.balena-api: '1'
-  #     io.balena.update.strategy: download-then-kill
-  #     io.balena.update.handover-timeout: ''
+  hassio_supervisor:
+    # image: "homeassistant/aarch64-hassio-supervisor"
+    build: hassio-supervisor
+    container_name: hassio_supervisor
+    restart: always
+    privileged: true
+    # entrypoint: ["/bin/bash", "-c", "/scripts/start_hassio.sh"
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    environment:
+      - HOMEASSISTANT_REPOSITORY=homeassistant/raspberrypi4-64-homeassistant
+      - SUPERVISOR_SHARE=supervisor-share
+      - SUPERVISOR_NAME=hassio_supervisor
+      - SUPERVISOR_MACHINE=raspberrypi4-64
+      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
+    volumes:
+      - supervisor-share:/data
+    devices:
+      - "/dev:/dev"
+      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"    
+    labels:
+      io.balena.features.balena-socket: '1'
+      io.balena.features.kernel-modules: '1'
+      io.balena.features.firmware: '1'
+      io.balena.features.dbus: '1'
+      io.balena.features.sysfs: '1'
+      io.balena.features.procfs: '1'
+      io.balena.features.journal-logs: '1'
+      io.balena.features.supervisor-api: '0'
+      io.balena.features.balena-api: '1'
+      io.balena.update.strategy: download-then-kill
+      io.balena.update.handover-timeout: ''
