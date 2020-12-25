@@ -1,4 +1,4 @@
-FROM homeassistant/raspberrypi4-64-homeassistant:stable
+FROM homeassistant/home-assistant:stable
 
 COPY sense.yaml /tmp/sense.yaml
 COPY ui-lovelace.yaml /tmp/ui-lovelace.yaml
