@@ -17,7 +17,7 @@ jobs:
         if: success()
         with:
           balena_api_token: ${{secrets.BALENA_API_TOKEN}}
-          balena_command: "deploy my-awesome-app --logs"
+          balena_command: "deploy hass --logs"
           balena_secrets: |
             {
               "docker.pkg.github.com": {
