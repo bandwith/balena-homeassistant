@@ -9,4 +9,4 @@ COPY start.sh /tmp/start.sh
 RUN chmod +x /tmp/start.sh
 # ADD https://github.com/hacs/integration/releases/latest/download/hacs.zip /tmp/custom_components/hacs
 
-CMD ["/bin/bash","/tmp/start.sh"]
+CMD ["bash","/tmp/start.sh"]
