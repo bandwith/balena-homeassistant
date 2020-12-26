@@ -4,7 +4,8 @@ volumes:
     supervisor-share:
 services:
   homeassistant:
-    build: homeassistant
+    # build: homeassistant
+    image: "homeassistant/home-assistant:stable"
     ports:
       - 80:8123
     privileged: true
