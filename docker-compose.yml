@@ -5,7 +5,7 @@ volumes:
 services:
   homeassistant:
     # build: homeassistant
-    image: "homeassistant/home-assistant:stable"
+    image: "homeassistant/raspberrypi4-64-homeassistant:stable"
     ports:
       - 80:8123
     privileged: true
@@ -17,21 +17,21 @@ services:
       - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave"
     environment: 
       - "TZ=America/New_York"
-  # mqtt:
-  #   image: arm64v8/eclipse-mosquitto:latest
-  #   ports:
-  #     - "1883:1883"
-  #     - "9001:9001"
-  #   restart: always
-  # hass-configurator:
-  #   image: "causticlab/hass-configurator-docker:arm"
-  #   restart: always
-  #   ports:
-  #     - "3218:3218"
-  #   volumes:
-  #     - 'config:/hass-config'
-  #   environment:
-  #     - HC_BASEPATH=/hass-config
+  mqtt:
+    image: arm64v8/eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    restart: always
+  hass-configurator:
+    image: "causticlab/hass-configurator-docker:arm"
+    restart: always
+    ports:
+      - "3218:3218"
+    volumes:
+      - 'config:/hass-config'
+    environment:
+      - HC_BASEPATH=/hass-config
   # hassio_supervisor:
   #   # image: "homeassistant/aarch64-hassio-supervisor"
   #   build: hassio-supervisor
