@@ -3,9 +3,9 @@ slug: "home-assistant"
 name: "Home Assistant"
 type: "sw.application"
 assets:
-  - url: "https://github.com/balenalabs-incubator/balena-homeassistant"
+  - url: "https://github.com/bandwith/balena-homeassistant"
     name: "repository"
-  - url: "https://raw.githubusercontent.com/balenalabs-incubator/balena-homeassistant/master/logo.png"
+  - url: "https://raw.githubusercontent.com/bandwith/balena-homeassistant/master/logo.png"
     name: "logo"
 data:
   description: "Open source home automation that puts local control and privacy first; a Home Assistant, HASS Config, and MQTT stack."
